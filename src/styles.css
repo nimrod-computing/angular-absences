@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+.panel {
+    padding: 10px;
+}
+
+fieldset .row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,28 @@
+<h3>Leave Request</h3>
+<div class="panel panel-default">
+    <div class="alert alert-danger" *ngIf="errorMessage != ''">
+    {{ errorMessage }}
+  </div>
+  <fieldset>
+    <legend>{{ user.fullName }}</legend>
+    <div class="row app-field form-group">
+      <div class="col-sm-4 col-xs-12">
+        <label for="startDate">Start Date</label>
+      </div>
+      <div class="col-sm-8 col-xs-12">
+        <input type="date" class="form-control" [(ngModel)]="absence.startDate" name="startDate" />
+      </div>
+    </div>
+    <div class="row app-field form-group">
+      <div class="col-sm-4 col-xs-12">
+        <label for="startDate">End Date</label>
+      </div>
+      <div class="col-sm-8 col-xs-12">
+        <input type="date" class="form-control" [(ngModel)]="absence.endDate" name="endDate" />
+      </div>
+    </div>
+  </fieldset>
+
+  <button (click)="requestLeave()" class="btn btn-primary">Request Leave</button>
+  <button (click)="cancelRequest()" class="btn btn-default">Cancel</button>
+</div>

@@ -1,0 +1,24 @@
+<h2>Login</h2>
+<div class="alert alert-dismissible alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>Warning!</h4>
+    <p>This is a prototype. No security has been implemented at this stage.</p>
+</div>
+<p>To log in to the Holidays system, please select from the following users.</p>
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+    <div class="panel panel-default">
+        <fieldset class="panel-body">
+            <div class="form-group" *ngIf="employees && employees.length > 0">
+                <label for="userId">User</label>
+                <select id="userId" class="form-control" (ngModel)="userId" name="userId">
+                    <option value="{{ user.id }}"  *ngFor="let user of employees">
+                        {{ user.firstName }} {{ user.lastName }}
+                    </option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="button" class="btn btn-default">Cancel</button>
+        </fieldset>
+    </div>
+</form>

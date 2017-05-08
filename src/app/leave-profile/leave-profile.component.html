@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+  <div class="alert alert-danger" *ngIf="errorMessage != ''">
+    {{ errorMessage }}
+  </div>
+
+  <fieldset class="form-group">
+    <legend>{{ user.fullName }}</legend>
+    <div class="row app-field">
+      <div class="col-sm-4 col-xs-12"><label for="fullName">Name</label></div>
+      <div class="col-sm-8 col-xs-12"><span id="fullName">{{ user.fullName }}</span></div>
+    </div>
+    <div class="row app-field">
+      <div class="col-sm-4 col-xs-12"><label for="year">Year</label></div>
+      <div class="col-sm-8 col-xs-12"><span id="year">{{ leaveProfile.year }}</span></div>
+    </div>
+    <div class="row app-field">
+      <div class="col-sm-4 col-xs-12"><label for="year">Days Allowed</label></div>
+      <div class="col-sm-8 col-xs-12"><span id="year">{{ leaveProfile.daysAllowed }}</span></div>
+    </div>
+    <div class="row app-field">
+      <div class="col-sm-4 col-xs-12"><label for="year">Days Remaining</label></div>
+      <div class="col-sm-8 col-xs-12"><span id="year">{{ leaveProfile.daysRemaining }}</span></div>
+    </div>
+    <div class="row app-field">
+      <div class="col-sm-4 col-xs-12"><label for="year">Awaiting Approval</label></div>
+      <div class="col-sm-8 col-xs-12"><span id="year">{{ leaveProfile.daysPending }}</span></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 container">
+        <app-absence-list [absences]="absences" [profileid]="leaveProfile.id"></app-absence-list>
+      </div>
+    </div>
+    <div class="row" *ngIf="showLeaveRequest">
+      <div class="col-xs-12 container">
+        <app-request-leave [leaveProfile]="leaveProfile" [user]="user" (posted)="refresh()"></app-request-leave>
+      </div>
+    </div>
+  </fieldset>
+
+  <button *ngIf="!showLeaveRequest" (click)="requestLeave()" [disabled]="!isLeaveAllowed()" class="btn btn-primary">Request Leave</button>
+
+</div>
