@@ -1,9 +1,4 @@
 <div class="panel panel-default">
-  <!--<div class="panel-header">
-    <h4>Absences</h4>
-  </div>-->
-
-  <!--<div class="panel-body">-->
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -15,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let absence of absences">
+        <tr *ngFor="let absence of absences" [class.pending]="absence.approval == 'Pending'" [class.declined]="absence.approval == 'Declined'">
           <td>{{ absence.startDate | date:'dd/MM/yyyy' }}</td>
           <td>{{ absence.endDate | date:'dd/MM/yyyy' }}</td>
           <td>{{ absence.approval }}</td>
@@ -25,5 +20,3 @@
       </tbody>
     </table>
   </div>
-
-<!--</div>-->
