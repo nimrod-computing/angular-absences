@@ -1,10 +1,10 @@
-import { StaffHolidaysPage } from './app.po';
+import { AbsencesPage } from './app.po';
 
-describe('staff-holidays App', () => {
-  let page: StaffHolidaysPage;
+describe('angular-absences App', () => {
+  let page: AbsencesPage;
 
   beforeEach(() => {
-    page = new StaffHolidaysPage();
+    page = new AbsencesPage();
   });
 
   it('should display message saying app works', () => {

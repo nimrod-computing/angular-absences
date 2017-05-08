@@ -1,6 +1,7 @@
 import { browser, element, by } from 'protractor';
 
-export class StaffHolidaysPage {
+export class AbsencesPage {
+  
   navigateTo() {
     return browser.get('/');
   }

@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { AbsencesApiService } from "app/services/absences-api.service";
 
 
-describe('HolidaysApiService', () => {
+describe('AbsencessApiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [AbsencesApiService]

@@ -16,4 +16,9 @@ export class AbsenceListComponent {
   @Input() absences: IAbsence[];
 
   constructor(private leaveProfilesService: LeaveProfilesService) { }
+
+  showAlert(message: string) : boolean {
+    alert(message);
+    return false;
+  }
 }

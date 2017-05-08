@@ -3,25 +3,27 @@
     <h4>Absences</h4>
   </div>-->
 
-  <div class="panel-body">
-    <table class="table">
+  <!--<div class="panel-body">-->
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th>Start Date</th>
           <th>End Date</th>
           <th>Approved?</th>
           <th>Approver</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let absence of absences">
-          <td>{{ absence.startDate | date:'dd/MM/yy' }}</td>
-          <td>{{ absence.endDate | date:'dd/MM/yy' }}</td>
+          <td>{{ absence.startDate | date:'dd/MM/yyyy' }}</td>
+          <td>{{ absence.endDate | date:'dd/MM/yyyy' }}</td>
           <td>{{ absence.approval }}</td>
           <td>{{ absence.approver }}</td>
+          <td><a href="#" (click)="showAlert('Not implemented')">Remove</a></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-</div>
+<!--</div>-->
