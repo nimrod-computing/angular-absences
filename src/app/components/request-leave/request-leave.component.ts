@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from "@angular/router";
 
-import { IModelState } from "app/models/error-response.interface";
 import { IAbsence } from "app/models/absence.interface";
 import { IEmployee } from "app/models/employee.interface";
 import { ILeaveProfile } from "app/models/leave-profile.interface";

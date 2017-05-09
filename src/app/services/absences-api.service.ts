@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Http, RequestOptions, RequestOptionsArgs, Headers } from '@angular/http';
 
-const UrlRoot: string = "http://localhost:56485/api/";
-//const UrlRoot: string = "http://nimrodcomputing.somee.com/api/";
+// const UrlRoot: string = "http://localhost:56485/api/";
+const UrlRoot: string = "http://nimrodcomputing.somee.com/api/";
 
 @Injectable()
 export class AbsencesApiService {
