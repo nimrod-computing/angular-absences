@@ -1,4 +1,8 @@
 <div class="panel panel-default">
+    <div class="alert alert-danger" *ngIf="errorMessage !== ''">
+      {{ errorMessage }}
+    </div>
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -15,7 +19,7 @@
           <td>{{ absence.endDate | date:'dd/MM/yyyy' }}</td>
           <td>{{ absence.approval }}</td>
           <td>{{ absence.approver }}</td>
-          <td><a href="#" (click)="showAlert('Not implemented')">Remove</a></td>
+          <td><a href="#" (click)="removeAbsence(absence.id)">Remove</a></td>
         </tr>
       </tbody>
     </table>

@@ -29,11 +29,11 @@ export class LeaveProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("refresh");
     this.refresh();
   }
 
   refresh(): void {
+    console.log("refresh");
     this.getLeaveProfile();
     this.showLeaveRequest = false;
   }

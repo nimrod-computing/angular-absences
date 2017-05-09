@@ -27,7 +27,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12 container">
-        <app-absence-list [absences]="absences" [profileid]="leaveProfile.id"></app-absence-list>
+        <app-absence-list [absences]="absences" [profileid]="leaveProfile.id" (deleted)="refresh()"></app-absence-list>
       </div>
     </div>
     <div class="row" *ngIf="showLeaveRequest">

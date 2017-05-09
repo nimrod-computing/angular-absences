@@ -15,4 +15,7 @@ export class AbsencesService {
       return this.api.post(Resource, entity);
   }
 
+  public remove(id : number) : Observable<any> {
+      return this.api.delete(Resource, id);
+  }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from "@angular/router";
 
 import { IAbsence } from "app/models/absence.interface";
 import { IEmployee } from "app/models/employee.interface";
@@ -23,7 +22,6 @@ export class RequestLeaveComponent implements OnInit {
 
   constructor(
     private absencesService: AbsencesService,
-    private router: Router,
     private errorHandler: ErrorHandlerService
   ) { }
 

@@ -43,6 +43,13 @@ export class AbsencesApiService {
       .catch(this.handleError);
   }
 
+  public delete(urlSegment: string, id: number, options: RequestOptionsArgs = {}): Observable<any> {
+    let url = UrlRoot + urlSegment + "/" + id;
+    return this.http.delete(url, options)
+      .map(response => response.json())
+      .catch(this.handleError);
+  }
+
   private handleError(error: Response) {
     console.log(error);
     return Observable.throw(error.json());
