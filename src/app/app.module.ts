@@ -17,6 +17,7 @@ import { EmployeesService } from 'app/services/employees.service';
 import { LeaveProfilesService } from "app/services/leave-profiles.service";
 import { ErrorHandlerService } from "app/services/error-handler.service";
 import { AbsencesService } from "app/services/absences.service";
+import { LeaveProfileComponent } from "app/my-absences/leave-profile/leave-profile.component";
 
 const appRoutes: Routes = [
   { path: "", component: LoginComponent },
