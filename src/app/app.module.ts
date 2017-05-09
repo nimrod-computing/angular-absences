@@ -5,18 +5,19 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { RequestLeaveComponent } from 'app/components/request-leave/request-leave.component';
+import { AbsencesService } from "app/services/absences.service";
+import { AbsenceListComponent } from "app/components/absence-list/absence-list.component";
+import { LeaveProfileComponent } from "app/components/leave-profile/leave-profile.component";
+import { PageNotFoundComponent } from "app/components/page-not-found/page-not-found.component";
+import { NavbarComponent } from "app/components/navbar/navbar.component";
 
 import { AuthService } from "app/services/auth.service";
 import { AbsencesApiService } from './services/absences-api.service';
 import { EmployeesService } from './services/employees.service';
 import { LeaveProfilesService } from "app/services/leave-profiles.service";
-import { LeaveProfileComponent } from "app/leave-profile/leave-profile.component";
-import { PageNotFoundComponent } from "app/page-not-found/page-not-found.component";
-import { AbsenceListComponent } from "app/absence-list/absence-list.component";
-import { RequestLeaveComponent } from './request-leave/request-leave.component';
-import { AbsencesService } from "app/services/absences.service";
+import { ErrorHandlerService } from "app/services/error-handler.service";
 
 const appRoutes: Routes = [
   { path: "", component: LoginComponent },
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     EmployeesService,
     LeaveProfilesService,
     AbsencesService,
-    AuthService
+    AuthService,
+    ErrorHandlerService
   ],
   bootstrap: [
     AppComponent

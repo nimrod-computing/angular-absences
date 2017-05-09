@@ -1,10 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from "@angular/router";
 
+import { IModelState } from "app/models/error-response.interface";
 import { IAbsence } from "app/models/absence.interface";
 import { IEmployee } from "app/models/employee.interface";
 import { ILeaveProfile } from "app/models/leave-profile.interface";
 import { AbsencesService } from "app/services/absences.service";
+import { ErrorHandlerService } from "app/services/error-handler.service";
 
 @Component({
   selector: 'app-request-leave',
@@ -17,17 +19,19 @@ export class RequestLeaveComponent implements OnInit {
   @Output() posted = new EventEmitter();
 
   errorMessage: string = "";
+  modelErrors: string[] = [];
   absence: IAbsence = <IAbsence>{};
 
   constructor(
     private absencesService: AbsencesService,
-    private router: Router
+    private router: Router,
+    private errorHandler: ErrorHandlerService
   ) { }
 
   ngOnInit() {
   }
 
-  cancelRequest(){
+  cancelRequest() {
     console.log('Request cancelled');
     this.posted.emit('cancelled');
   }
@@ -46,7 +50,11 @@ export class RequestLeaveComponent implements OnInit {
       },
       err => {
         console.log(err);
-        this.errorMessage = err;
+        this.modelErrors = this.errorHandler.getModelErrors(err);
+        if (this.modelErrors.length == 0)
+          this.errorMessage = err.message;
+        else
+          this.errorMessage = '';
       });
   }
 

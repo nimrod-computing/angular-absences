@@ -1,7 +1,14 @@
 <h3>Leave Request</h3>
 <div class="panel panel-default">
-    <div class="alert alert-danger" *ngIf="errorMessage != ''">
+  <div class="alert alert-danger" *ngIf="errorMessage != ''">
     {{ errorMessage }}
+  </div>
+  <div class="alert alert-danger" *ngIf="modelErrors.length > 0">
+    <ul>
+      <li *ngFor="let modelError of modelErrors">
+        {{  modelError  }}
+      </li>
+    </ul>
   </div>
   <fieldset>
     <legend>{{ user.fullName }}</legend>
